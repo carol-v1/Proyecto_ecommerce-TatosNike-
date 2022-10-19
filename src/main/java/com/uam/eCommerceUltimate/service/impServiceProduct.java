@@ -11,28 +11,33 @@ import java.util.List;
 
 @Service
 @Component("serviceProduct")
-public class impServiceProduct implements IServiceProduct{
+public class impServiceProduct implements IServiceProduct
+{
 
     @Autowired
     private IProductRepository repo;
 
     @Override
-    public List<Product> getListProduct() {
+    public List<Product> getListProduct()
+    {
         return repo.findAll();
     }
 
     @Override
-    public Product findById(String id) {
+    public Product findById(String id)
+    {
         return repo.findById(id).get();
     }
 
     @Override
-    public Product saveProduct(Product product) {
+    public Product saveProduct(Product product)
+    {
         return repo.save(product);
     }
 
     @Override
-    public void deleteProduct(String id) {
+    public void deleteProduct(String id)
+    {
         repo.deleteById(id);
     }
 }

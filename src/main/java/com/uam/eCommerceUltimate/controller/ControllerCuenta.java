@@ -1,6 +1,7 @@
 package com.uam.eCommerceUltimate.controller;
 
-import com.uam.eCommerceUltimate.model.Product;
+import com.uam.eCommerceUltimate.model.cuenta;
+import com.uam.eCommerceUltimate.service.IServiceCuenta;
 import com.uam.eCommerceUltimate.service.IServiceProduct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,35 +10,35 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/cuenta")
 @CrossOrigin
-public class ControllerProduct
+public class ControllerCuenta
 {
-    @Qualifier("serviceProduct")
+    @Qualifier("serviceCuenta")
     @Autowired
-    private IServiceProduct service;
+    private IServiceCuenta service;
 
     @GetMapping("/list")
-    public List<Product> getAll()
+    public List<cuenta> getAll()
     {
-        return service.getListProduct();
+        return service.getListCuenta();
     }
 
     @PostMapping("/save")
-    public Product saveProduct(@RequestBody Product product)
+    public cuenta saveCuenta(@RequestBody cuenta cuenta)
     {
-        return service.saveProduct(product);
+        return service.saveCuenta(cuenta);
     }
 
     @GetMapping("/{id}")
-    public Product getProduct(@PathVariable String id)
+    public cuenta getCuenta(@PathVariable Integer id)
     {
         return service.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteProduct(@PathVariable String id)
+    public void deleteCuenta(@PathVariable Integer id)
     {
-        service.deleteProduct(id);
+        service.deleteCuenta(id);
     }
 }
