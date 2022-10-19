@@ -1,4 +1,4 @@
-package eCommerceUltimate.model;
+package com.uam.eCommerceUltimate.model;
 
 import lombok.Data;
 

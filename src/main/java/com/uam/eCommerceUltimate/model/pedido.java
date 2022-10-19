@@ -1,4 +1,4 @@
-package eCommerceUltimate.model;
+package com.uam.eCommerceUltimate.model;
 
 import lombok.Data;
 
@@ -8,12 +8,10 @@ import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name="cuenta")
-public class cuenta
+@Table(name="pedido")
+public class pedido
 {
     @Id
     private int id;
-    private String direccionEnvio;
-    private int tipo;
-    private boolean activo;
+    private int estado;
 }
