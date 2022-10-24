@@ -1,18 +1,20 @@
 package com.uam.eCommerceUltimate.service;
 
-import com.uam.eCommerceUltimate.model.Product;
+import com.uam.eCommerceUltimate.model.Producto;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
 public interface IServiceProduct
 {
-    public List<Product> getListProduct();
+    public List<Producto> getListProduct();
 
-    public Product findById (String id);
+    public Producto findById (String id);
 
-    public Product saveProduct (Product product);
+    Producto saveProduct(String productDto, MultipartFile image) throws IOException;
 
     public void deleteProduct(String id);
 }

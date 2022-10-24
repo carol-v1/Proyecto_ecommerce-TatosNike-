@@ -1,7 +1,7 @@
 package com.uam.eCommerceUltimate.service;
 
 
-import com.uam.eCommerceUltimate.model.categoria;
+import com.uam.eCommerceUltimate.model.Categoria;
 import com.uam.eCommerceUltimate.repository.ICategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,19 +17,19 @@ public class impServiceCategoria implements IServiceCategoria
     private ICategoriaRepository repo;
 
     @Override
-    public List<categoria> getListCategoria()
+    public List<Categoria> getListCategoria()
     {
         return repo.findAll();
     }
 
     @Override
-    public categoria findById(int id)
+    public Categoria findById(int id)
     {
         return repo.findById(id).get();
     }
 
     @Override
-    public categoria saveCategoria(categoria categoria)
+    public Categoria saveCategoria(Categoria categoria)
     {
         return repo.save(categoria);
     }

@@ -5,16 +5,14 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Data
-@Table(name="pago")
-public class pago
+@Table(name="carroCompra")
+public class CarroCompra
 {
     @Id
-    private int id;
-    private String cvv;
-    private String compania;
-    private String fechaCaducidad;
-    private String numeroTarjeta;
+    private Long id;
+    private Date productoAgregado;
 }

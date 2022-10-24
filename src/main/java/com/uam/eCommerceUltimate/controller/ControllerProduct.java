@@ -1,11 +1,13 @@
 package com.uam.eCommerceUltimate.controller;
 
-import com.uam.eCommerceUltimate.model.Product;
+import com.uam.eCommerceUltimate.model.Producto;
 import com.uam.eCommerceUltimate.service.IServiceProduct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -18,19 +20,18 @@ public class ControllerProduct
     private IServiceProduct service;
 
     @GetMapping("/list")
-    public List<Product> getAll()
+    public List<Producto> getAll()
     {
         return service.getListProduct();
     }
 
     @PostMapping("/save")
-    public Product saveProduct(@RequestBody Product product)
-    {
-        return service.saveProduct(product);
+    public Producto saveProduct(@RequestPart("product") String productDto, @RequestPart("image") MultipartFile image) throws IOException {
+        return service.saveProduct(productDto, image);
     }
 
     @GetMapping("/{id}")
-    public Product getProduct(@PathVariable String id)
+    public Producto getProduct(@PathVariable String id)
     {
         return service.findById(id);
     }

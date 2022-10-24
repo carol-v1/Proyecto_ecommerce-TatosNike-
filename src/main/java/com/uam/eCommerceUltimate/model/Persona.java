@@ -9,11 +9,11 @@ import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name="Person")
-public class Person
+@Table(name="Persona")
+public class Persona
 {
     @Id
-    private int id;
+    private Long id;
     private String nombre;
     private String apellido;
     private String direccion;

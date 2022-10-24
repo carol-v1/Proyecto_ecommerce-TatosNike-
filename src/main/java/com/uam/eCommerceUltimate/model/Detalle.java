@@ -10,10 +10,10 @@ import java.util.Date;
 @Entity
 @Data
 @Table(name="detalle")
-public class detalle
+public class Detalle
 {
     @Id
-    private int id;
+    private String id;
     private Date diaOrden;
     private Date diaEntrega;
     private Date fechaPago;

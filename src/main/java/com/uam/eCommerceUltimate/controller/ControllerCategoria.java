@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.controller;
 
-import com.uam.eCommerceUltimate.model.categoria;
+import com.uam.eCommerceUltimate.model.Categoria;
 import com.uam.eCommerceUltimate.service.IServiceCategoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,19 +18,19 @@ public class ControllerCategoria
     private IServiceCategoria service;
 
     @GetMapping("/list")
-    public List<categoria> getAll()
+    public List<Categoria> getAll()
     {
         return service.getListCategoria();
     }
 
     @PostMapping("/save")
-    public categoria saveCategoria(@RequestBody categoria categoria)
+    public Categoria saveCategoria(@RequestBody Categoria categoria)
     {
         return service.saveCategoria(categoria);
     }
 
     @GetMapping("/{id}")
-    public categoria getCategoria(@PathVariable Integer id)
+    public Categoria getCategoria(@PathVariable Integer id)
     {
         return service.findById(id);
     }

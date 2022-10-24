@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.service;
 
-import com.uam.eCommerceUltimate.model.detalle;
+import com.uam.eCommerceUltimate.model.Detalle;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,11 +8,11 @@ import java.util.List;
 @Service
 public interface IServiceDetalle
 {
-    public List<detalle> getListDetalle();
+    public List<Detalle> getListDetalle();
 
-    public detalle findById (int id);
+    public Detalle findById (int id);
 
-    public detalle saveDetalle (detalle detalle);
+    public Detalle saveDetalle (Detalle detalle);
 
     public void deleteDetalle(int id);
 }

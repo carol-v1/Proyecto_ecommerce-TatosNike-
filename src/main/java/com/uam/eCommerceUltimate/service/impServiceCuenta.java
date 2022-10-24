@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.service;
 
-import com.uam.eCommerceUltimate.model.cuenta;
+import com.uam.eCommerceUltimate.model.Cuenta;
 import com.uam.eCommerceUltimate.repository.ICuentaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,19 +16,19 @@ public class impServiceCuenta implements IServiceCuenta
     private ICuentaRepository repo;
 
     @Override
-    public List<cuenta> getListCuenta()
+    public List<Cuenta> getListCuenta()
     {
         return repo.findAll();
     }
 
     @Override
-    public cuenta findById(int id)
+    public Cuenta findById(int id)
     {
         return repo.findById(id).get();
     }
 
     @Override
-    public cuenta saveCuenta(cuenta cuenta)
+    public Cuenta saveCuenta(Cuenta cuenta)
     {
         return repo.save(cuenta);
     }

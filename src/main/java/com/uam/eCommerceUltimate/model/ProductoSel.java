@@ -5,13 +5,14 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
 
 @Entity
 @Data
-@Table(name="carroCompra")
-public class carroCompra
+@Table(name="prodcutoSel")
+public class ProductoSel
 {
     @Id
-    private Date productoAgregado;
+    private Long id;
+    private Integer cantidad;
+    private Double precio;
 }
