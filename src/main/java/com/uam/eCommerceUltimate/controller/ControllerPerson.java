@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.controller;
 
-import com.uam.eCommerceUltimate.Service.IServicePerson;
+import com.uam.eCommerceUltimate.service.IServicePerson;
 import com.uam.eCommerceUltimate.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/person")
 @CrossOrigin
-public class ControllerPerson {
+public class ControllerPerson{
 
     @Qualifier("servicePerson")
     @Autowired

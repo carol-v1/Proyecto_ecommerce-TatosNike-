@@ -3,7 +3,6 @@ package com.uam.eCommerceUltimate.service;
 import com.uam.eCommerceUltimate.model.Product;
 import com.uam.eCommerceUltimate.repository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 

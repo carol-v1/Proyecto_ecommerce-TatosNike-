@@ -2,7 +2,6 @@ package com.uam.eCommerceUltimate.controller;
 
 import com.uam.eCommerceUltimate.model.cuenta;
 import com.uam.eCommerceUltimate.service.IServiceCuenta;
-import com.uam.eCommerceUltimate.service.IServiceProduct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;

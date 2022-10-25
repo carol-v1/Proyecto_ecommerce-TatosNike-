@@ -4,7 +4,6 @@ import com.uam.eCommerceUltimate.model.categoria;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Locale;
 
 @Service
 public interface IServiceCategoria
