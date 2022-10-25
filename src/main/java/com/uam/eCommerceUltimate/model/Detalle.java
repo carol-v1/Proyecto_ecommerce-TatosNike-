@@ -5,19 +5,17 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Data
-@Table(name="detalle")
+@Table(name="Detalle")
 public class Detalle
 {
     @Id
-    @SequenceGenerator(name = "detalle_seq",
-            sequenceName = "detalle_seq",
-            allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator = "detalle_seq")
-    private String id;
+    @GeneratedValue
+    private UUID id;
+    private Long idProducto;
     private Date diaOrden;
     private Date diaEntrega;
     private Date fechaPago;
@@ -26,6 +24,6 @@ public class Detalle
     @ManyToOne
     @JoinColumn(name = "id")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Detalle detalle;
+    private Pedido pedido;
 
 }

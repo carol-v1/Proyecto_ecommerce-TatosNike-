@@ -15,5 +15,5 @@ public class Cuenta
     private Long id;
     private String direccionEnvio;
     private Long tipo;
-    private Boolean activo;
+    private boolean activo;
 }

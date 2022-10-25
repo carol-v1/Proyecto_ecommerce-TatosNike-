@@ -22,7 +22,7 @@ public class impServicePago implements IServicePago
     }
 
     @Override
-    public Pago findById(int id)
+    public Pago findById(Long id)
     {
         return repo.findById(id).get();
     }
@@ -34,7 +34,7 @@ public class impServicePago implements IServicePago
     }
 
     @Override
-    public void deletePago(int id)
+    public void deletePago(Long id)
     {
         repo.deleteById(id);
     }
