@@ -1,7 +1,7 @@
 package com.uam.eCommerceUltimate.controller;
 
 import com.uam.eCommerceUltimate.service.IServicePerson;
-import com.uam.eCommerceUltimate.model.Person;
+import com.uam.eCommerceUltimate.model.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -18,17 +18,17 @@ public class ControllerPerson{
     private IServicePerson service;
 
     @GetMapping("/list")
-    public List<Person> getAll() {
+    public List<Persona> getAll() {
         return service.getListPerson();
     }
 
     @PostMapping("/save")
-    public Person savePerson (@RequestBody Person person){
+    public Persona savePerson (@RequestBody Persona person){
         return service.savePerson(person);
     }
 
     @GetMapping("/{id}")
-    public Person getPerson (@PathVariable Integer id){
+    public Persona getPerson (@PathVariable Integer id){
         return service.findById(id);
     }
 

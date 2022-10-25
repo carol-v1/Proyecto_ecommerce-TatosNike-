@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.service;
 
-import com.uam.eCommerceUltimate.model.Person;
+import com.uam.eCommerceUltimate.model.Persona;
 import com.uam.eCommerceUltimate.repository.IPersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,17 +16,17 @@ public class impServicePerson implements IServicePerson
     private IPersonRepository repo;
 
     @Override
-    public List<Person> getListPerson() {
+    public List<Persona> getListPerson() {
         return repo.findAll();
     }
 
     @Override
-    public Person findById(int id) {
+    public Persona findById(int id) {
         return repo.findById(id).get();
     }
 
     @Override
-    public Person savePerson(Person person) {
+    public Persona savePerson(Persona person) {
         return repo.save(person);
     }
 

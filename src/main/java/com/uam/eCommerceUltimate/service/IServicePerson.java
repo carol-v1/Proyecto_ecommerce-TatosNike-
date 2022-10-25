@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.service;
 
-import com.uam.eCommerceUltimate.model.Person;
+import com.uam.eCommerceUltimate.model.Persona;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,11 +8,11 @@ import java.util.List;
 public interface IServicePerson
 {
 
-    public List<Person> getListPerson();
+    public List<Persona> getListPerson();
 
-    public Person findById(int id);
+    public Persona findById(int id);
 
-    Person savePerson (Person person);
+    Persona savePerson (Persona person);
 
     public void deletePerson(int id);
 
