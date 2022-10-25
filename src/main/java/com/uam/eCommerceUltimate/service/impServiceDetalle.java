@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.service;
 
-import com.uam.eCommerceUltimate.model.detalle;
+import com.uam.eCommerceUltimate.model.Detalle;
 import com.uam.eCommerceUltimate.repository.IDetalleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,19 +16,19 @@ public class impServiceDetalle implements IServiceDetalle
     private IDetalleRepository repo;
 
     @Override
-    public List<detalle> getListDetalle()
+    public List<Detalle> getListDetalle()
     {
         return repo.findAll();
     }
 
     @Override
-    public detalle findById(int id)
+    public Detalle findById(int id)
     {
         return repo.findById(id).get();
     }
 
     @Override
-    public detalle saveDetalle(detalle detalle)
+    public Detalle saveDetalle(Detalle detalle)
     {
         return repo.save(detalle);
     }

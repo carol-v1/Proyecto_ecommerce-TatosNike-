@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.service;
 
-import com.uam.eCommerceUltimate.model.pago;
+import com.uam.eCommerceUltimate.model.Pago;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,11 +8,11 @@ import java.util.List;
 @Service
 public interface IServicePago
 {
-    public List<pago> getListPago();
+    public List<Pago> getListPago();
 
-    public pago findById (int id);
+    public Pago findById (int id);
 
-    public pago savePago (pago pago);
+    public Pago savePago (Pago pago);
 
     public void deletePago (int id);
 }

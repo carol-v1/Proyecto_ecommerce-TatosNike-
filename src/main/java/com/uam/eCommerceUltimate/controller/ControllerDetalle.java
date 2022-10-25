@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.controller;
 
-import com.uam.eCommerceUltimate.model.detalle;
+import com.uam.eCommerceUltimate.model.Detalle;
 import com.uam.eCommerceUltimate.service.IServiceDetalle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,19 +18,19 @@ public class ControllerDetalle
     private IServiceDetalle service;
 
     @GetMapping("/list")
-    public List<detalle> getAll()
+    public List<Detalle> getAll()
     {
         return service.getListDetalle();
     }
 
     @PostMapping("/save")
-    public detalle saveDetalle(@RequestBody detalle detalle)
+    public Detalle saveDetalle(@RequestBody Detalle detalle)
     {
         return service.saveDetalle(detalle);
     }
 
     @GetMapping("/{id}")
-    public detalle getDetalle(@PathVariable Integer id)
+    public Detalle getDetalle(@PathVariable Integer id)
     {
         return service.findById(id);
     }

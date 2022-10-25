@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.controller;
 
-import com.uam.eCommerceUltimate.model.pago;
+import com.uam.eCommerceUltimate.model.Pago;
 import com.uam.eCommerceUltimate.service.IServicePago;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,19 +18,19 @@ public class ControllerPago
     private IServicePago service;
 
     @GetMapping("/list")
-    public List<pago> getAll()
+    public List<Pago> getAll()
     {
         return service.getListPago();
     }
 
     @PostMapping("/save")
-    public pago savePago(@RequestBody pago pago)
+    public Pago savePago(@RequestBody Pago pago)
     {
         return service.savePago(pago);
     }
 
     @GetMapping("/{id}")
-    public pago getPago(@PathVariable Integer id)
+    public Pago getPago(@PathVariable Integer id)
     {
         return service.findById(id);
     }

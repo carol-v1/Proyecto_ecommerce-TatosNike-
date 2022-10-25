@@ -8,11 +8,10 @@ import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name="usuarioWeb")
-public class usuarioWeb
+@Table(name="categoria")
+public class Categoria
 {
     @Id
-    private String idLogin;
-    private int contrasena;
-    private int estado;
+    private Long id;
+    private String tipo;
 }

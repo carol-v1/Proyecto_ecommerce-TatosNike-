@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.service;
 
-import com.uam.eCommerceUltimate.model.pago;
+import com.uam.eCommerceUltimate.model.Pago;
 import com.uam.eCommerceUltimate.repository.IPagoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,19 +16,19 @@ public class impServicePago implements IServicePago
     private IPagoRepository repo;
 
     @Override
-    public List<pago> getListPago()
+    public List<Pago> getListPago()
     {
         return repo.findAll();
     }
 
     @Override
-    public pago findById(int id)
+    public Pago findById(int id)
     {
         return repo.findById(id).get();
     }
 
     @Override
-    public pago savePago(pago pago)
+    public Pago savePago(Pago pago)
     {
         return repo.save(pago);
     }

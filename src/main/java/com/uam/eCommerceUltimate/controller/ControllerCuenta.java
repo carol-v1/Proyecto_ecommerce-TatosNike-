@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.controller;
 
-import com.uam.eCommerceUltimate.model.cuenta;
+import com.uam.eCommerceUltimate.model.Cuenta;
 import com.uam.eCommerceUltimate.service.IServiceCuenta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,19 +18,19 @@ public class ControllerCuenta
     private IServiceCuenta service;
 
     @GetMapping("/list")
-    public List<cuenta> getAll()
+    public List<Cuenta> getAll()
     {
         return service.getListCuenta();
     }
 
     @PostMapping("/save")
-    public cuenta saveCuenta(@RequestBody cuenta cuenta)
+    public Cuenta saveCuenta(@RequestBody Cuenta cuenta)
     {
         return service.saveCuenta(cuenta);
     }
 
     @GetMapping("/{id}")
-    public cuenta getCuenta(@PathVariable Integer id)
+    public Cuenta getCuenta(@PathVariable Integer id)
     {
         return service.findById(id);
     }

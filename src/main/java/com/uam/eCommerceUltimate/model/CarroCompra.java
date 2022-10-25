@@ -9,13 +9,10 @@ import java.util.Date;
 
 @Entity
 @Data
-@Table(name="detalle")
-public class detalle
+@Table(name="carroCompra")
+public class CarroCompra
 {
     @Id
-    private int id;
-    private Date diaOrden;
-    private Date diaEntrega;
-    private Date fechaPago;
-    private double total;
+    private Long id;
+    private Date productoAgregado;
 }
