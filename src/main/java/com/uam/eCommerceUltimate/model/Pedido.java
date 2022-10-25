@@ -2,16 +2,23 @@ package com.uam.eCommerceUltimate.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
-@Table(name="pedido")
+@Table(name="Pedidos")
 public class Pedido
 {
     @Id
+    @SequenceGenerator(name = "pedido_seq",
+            sequenceName = "pedido_seq",
+            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "pedido_seq")
     private Long id;
-    private Integer estado;
+    private String estado;
+
+    @OneToMany (mappedBy = "detalle", cascade = CascadeType.ALL)
+    private List<Detalle> detalles;
 }
