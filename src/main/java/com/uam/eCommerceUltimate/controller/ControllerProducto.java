@@ -1,7 +1,7 @@
 package com.uam.eCommerceUltimate.controller;
 
 import com.uam.eCommerceUltimate.model.Producto;
-import com.uam.eCommerceUltimate.service.IServiceProduct;
+import com.uam.eCommerceUltimate.service.IServiceProducto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/producto")
 @CrossOrigin
-public class ControllerProduct
+public class ControllerProducto
 {
     @Qualifier("serviceProduct")
     @Autowired
-    private IServiceProduct service;
+    private IServiceProducto service;
 
     @GetMapping("/list")
     public List<Producto> getAll()
@@ -26,7 +26,7 @@ public class ControllerProduct
     }
 
     @PostMapping("/save")
-    public Producto saveProduct(@RequestPart("product") String productDto, @RequestPart("image") MultipartFile image) throws IOException {
+    public Producto saveProduct(@RequestPart("producto") String productDto, @RequestPart("imagen") MultipartFile image) throws IOException {
         return service.saveProduct(productDto, image);
     }
 

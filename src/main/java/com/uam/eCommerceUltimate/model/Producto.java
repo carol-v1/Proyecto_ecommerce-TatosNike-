@@ -18,7 +18,7 @@ public class Producto
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "producto_seq")
     private Long id;
-    private String name;
+    private String nombre;
     private String modelo;
     private String imagen;
 

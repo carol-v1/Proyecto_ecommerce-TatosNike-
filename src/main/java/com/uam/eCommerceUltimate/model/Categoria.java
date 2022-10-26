@@ -19,6 +19,7 @@ public class Categoria
             generator = "categoria_seq")
     private Long id;
     private String tipo;
+    private String genero;
 
     @ManyToOne
     @JoinColumn(name = "id_producto")

@@ -1,6 +1,6 @@
 package com.uam.eCommerceUltimate.controller;
 
-import com.uam.eCommerceUltimate.service.IServicePerson;
+import com.uam.eCommerceUltimate.service.IServicePersona;
 import com.uam.eCommerceUltimate.model.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,11 +11,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/persona")
 @CrossOrigin
-public class ControllerPerson{
+public class ControllerPersona {
 
     @Qualifier("servicePerson")
     @Autowired
-    private IServicePerson service;
+    private IServicePersona service;
 
     @GetMapping("/list")
     public List<Persona> getAll() {

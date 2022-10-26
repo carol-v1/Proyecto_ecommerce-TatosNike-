@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.uam.eCommerceUltimate.model.Categoria;
 import com.uam.eCommerceUltimate.model.Producto;
 import com.uam.eCommerceUltimate.repository.ICategoriaRepository;
-import com.uam.eCommerceUltimate.repository.IProductRepository;
+import com.uam.eCommerceUltimate.repository.IProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -19,10 +19,10 @@ import java.util.List;
 
 @Service
 @Component("serviceProduct")
-public class impServiceProduct implements IServiceProduct
+public class impServiceProducto implements IServiceProducto
 {
     @Autowired
-    private IProductRepository repo;
+    private IProductoRepository repo;
     @Autowired
     private ICategoriaRepository repoDet;
     @Value("${ruta.archivos.imagen}")
@@ -48,15 +48,15 @@ public class impServiceProduct implements IServiceProduct
             Files.write(path,imgByte);
         }
         ObjectMapper objectMapper = new ObjectMapper();
-        Producto product = objectMapper.readValue(productDto, Producto.class);
-        product.setImagen(image.getOriginalFilename());
-        List<Categoria> categorias = product.getCategorias();
-        product.setCategorias(null);
+        Producto producto = objectMapper.readValue(productDto, Producto.class);
+        producto.setImagen(image.getOriginalFilename());
+        List<Categoria> categorias = producto.getCategorias();
+        producto.setCategorias(null);
         for (Categoria det: categorias){
-            det.setProducto(product);
+            det.setProducto(producto);
         }
-        product.setCategorias(categorias);
-        return repo.save(product);
+        producto.setCategorias(categorias);
+        return repo.save(producto);
     }
 
     @Override

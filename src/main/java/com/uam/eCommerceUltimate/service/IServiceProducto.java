@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public interface IServiceProduct
+public interface IServiceProducto
 {
     public List<Producto> getListProduct();
 

@@ -2,7 +2,7 @@ package com.uam.eCommerceUltimate.service;
 
 import com.uam.eCommerceUltimate.model.Persona;
 import com.uam.eCommerceUltimate.model.UsuarioWeb;
-import com.uam.eCommerceUltimate.repository.IPersonRepository;
+import com.uam.eCommerceUltimate.repository.IPersonaRepository;
 import com.uam.eCommerceUltimate.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,10 +12,10 @@ import java.util.List;
 
 @Service
 @Component("servicePerson")
-public class impServicePerson implements IServicePerson
+public class impServicePersona implements IServicePersona
 {
     @Autowired
-    private IPersonRepository repo;
+    private IPersonaRepository repo;
 
     @Autowired
     private IUsuarioRepository repoDet;
