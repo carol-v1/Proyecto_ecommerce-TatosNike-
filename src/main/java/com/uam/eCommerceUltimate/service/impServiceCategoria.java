@@ -23,7 +23,7 @@ public class impServiceCategoria implements IServiceCategoria
     }
 
     @Override
-    public Categoria findById(int id)
+    public Categoria findById(Long id)
     {
         return repo.findById(id).get();
     }
@@ -35,7 +35,7 @@ public class impServiceCategoria implements IServiceCategoria
     }
 
     @Override
-    public void deleteCategoria(int id)
+    public void deleteCategoria(Long id)
     {
         repo.deleteById(id);
     }

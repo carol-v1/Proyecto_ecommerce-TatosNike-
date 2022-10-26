@@ -30,13 +30,13 @@ public class ControllerCategoria
     }
 
     @GetMapping("/{id}")
-    public Categoria getCategoria(@PathVariable Integer id)
+    public Categoria getCategoria(@PathVariable Long id)
     {
         return service.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteCategoria(@PathVariable Integer id)
+    public void deleteCategoria(@PathVariable Long id)
     {
         service.deleteCategoria(id);
     }

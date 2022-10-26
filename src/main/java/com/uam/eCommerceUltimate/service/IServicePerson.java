@@ -10,10 +10,10 @@ public interface IServicePerson
 
     public List<Persona> getListPerson();
 
-    public Persona findById(int id);
+    public Persona findById(Long id);
 
     Persona savePerson (Persona person);
 
-    public void deletePerson(int id);
+    public void deletePerson(Long id);
 
 }

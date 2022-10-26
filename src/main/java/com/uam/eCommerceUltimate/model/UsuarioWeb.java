@@ -7,13 +7,14 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name="usuarioWeb")
+@Table(name="UsuarioWeb")
 public class UsuarioWeb
 {
     @Id
-    private String idLogin;
-    private Integer contrasena;
-    private Integer estado;
+    private String id;
+    private Long idPersona;
+    private String contraseña;
+    private String estado;
 
     @ManyToOne
     @JoinColumn(name = "id")

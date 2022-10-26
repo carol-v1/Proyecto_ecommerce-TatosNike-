@@ -28,12 +28,12 @@ public class ControllerPerson{
     }
 
     @GetMapping("/{id}")
-    public Persona getPerson (@PathVariable Integer id){
+    public Persona getPerson (@PathVariable Long id){
         return service.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deletePerson (@PathVariable Integer id){
+    public void deletePerson (@PathVariable Long id){
         service.deletePerson(id);
 
     }

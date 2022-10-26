@@ -3,6 +3,7 @@ package com.uam.eCommerceUltimate.service;
 import com.uam.eCommerceUltimate.model.Persona;
 import com.uam.eCommerceUltimate.model.UsuarioWeb;
 import com.uam.eCommerceUltimate.repository.IPersonRepository;
+import com.uam.eCommerceUltimate.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -16,13 +17,16 @@ public class impServicePerson implements IServicePerson
     @Autowired
     private IPersonRepository repo;
 
+    @Autowired
+    private IUsuarioRepository repoDet;
+
     @Override
     public List<Persona> getListPerson() {
         return repo.findAll();
     }
 
     @Override
-    public Persona findById(int id) {
+    public Persona findById(Long id) {
         return repo.findById(id).get();
     }
 
@@ -46,7 +50,7 @@ public class impServicePerson implements IServicePerson
     }
 
     @Override
-    public void deletePerson(int id) {
+    public void deletePerson(Long id) {
         repo.deleteById(id);
     }
 }
