@@ -10,9 +10,9 @@ public interface IServicePago
 {
     public List<Pago> getListPago();
 
-    public Pago findById (int id);
+    public Pago findById (Long id);
 
     public Pago savePago (Pago pago);
 
-    public void deletePago (int id);
+    public void deletePago (Long id);
 }

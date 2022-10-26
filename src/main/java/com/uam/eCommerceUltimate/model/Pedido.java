@@ -17,8 +17,9 @@ public class Pedido
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "pedido_seq")
     private Long id;
+    private Long idPersona;
     private String estado;
 
-    @OneToMany (mappedBy = "detalle", cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<Detalle> detalles;
 }

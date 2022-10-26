@@ -30,13 +30,13 @@ public class ControllerPago
     }
 
     @GetMapping("/{id}")
-    public Pago getPago(@PathVariable Integer id)
+    public Pago getPago(@PathVariable Long id)
     {
         return service.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deletePago(@PathVariable Integer id)
+    public void deletePago(@PathVariable Long id)
     {
         service.deletePago(id);
     }

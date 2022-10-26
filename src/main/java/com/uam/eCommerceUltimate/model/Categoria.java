@@ -2,9 +2,7 @@ package com.uam.eCommerceUltimate.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -12,6 +10,11 @@ import javax.persistence.Table;
 public class Categoria
 {
     @Id
+    @SequenceGenerator(name = "categoria_seq",
+            sequenceName = "categoria_seq",
+            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "categoria_seq")
     private Long id;
     private String tipo;
 }

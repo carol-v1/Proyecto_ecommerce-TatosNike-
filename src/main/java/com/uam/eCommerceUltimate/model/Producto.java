@@ -15,5 +15,5 @@ public class Producto
     private UUID id;
     private String name;
     private String modelo;
-    private  String imagen;
+    private String imagen;
 }
