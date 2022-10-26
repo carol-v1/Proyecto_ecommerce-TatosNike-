@@ -1,10 +1,9 @@
 package com.uam.eCommerceUltimate.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -15,4 +14,9 @@ public class UsuarioWeb
     private String idLogin;
     private Integer contrasena;
     private Integer estado;
+
+    @ManyToOne
+    @JoinColumn(name = "id")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Persona personas;
 }
