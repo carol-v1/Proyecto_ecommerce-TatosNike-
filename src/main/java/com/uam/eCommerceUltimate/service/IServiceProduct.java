@@ -12,9 +12,9 @@ public interface IServiceProduct
 {
     public List<Producto> getListProduct();
 
-    public Producto findById (String id);
+    public Producto findById (Long id);
 
     Producto saveProduct(String productDto, MultipartFile image) throws IOException;
 
-    public void deleteProduct(String id);
+    public void deleteProduct(Long id);
 }

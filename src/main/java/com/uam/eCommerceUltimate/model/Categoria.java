@@ -1,8 +1,10 @@
 package com.uam.eCommerceUltimate.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,4 +19,9 @@ public class Categoria
             generator = "categoria_seq")
     private Long id;
     private String tipo;
+
+    @ManyToOne
+    @JoinColumn(name = "id")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Producto producto;
 }
