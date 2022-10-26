@@ -39,12 +39,12 @@ public class impServicePerson implements IServicePerson
         o.setDireccion(person.getDireccion());
         o.setEmail(person.getEmail());
         o.setCelular(person.getCelular());
-        List<UsuarioWeb> usuarioWebs = person.getUsuariosWeb();
+        List<UsuarioWeb> usuariosWeb = person.getUsuariosWeb();
         person.setUsuariosWeb(null);
-        for (UsuarioWeb det : usuarioWebs){
-            det.setPersonas(o);
+        for (UsuarioWeb det : usuariosWeb){
+            det.setPersona(o);
         }
-        o.setUsuariosWeb(usuarioWebs);
+        o.setUsuariosWeb(usuariosWeb);
         return repo.save(o);
 
     }

@@ -22,7 +22,7 @@ public class Detalle
     private double total;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_pedido")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Pedido pedido;
 

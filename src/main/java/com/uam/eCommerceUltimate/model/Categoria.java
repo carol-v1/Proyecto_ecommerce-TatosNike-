@@ -21,7 +21,7 @@ public class Categoria
     private String tipo;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_producto")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Producto producto;
 }

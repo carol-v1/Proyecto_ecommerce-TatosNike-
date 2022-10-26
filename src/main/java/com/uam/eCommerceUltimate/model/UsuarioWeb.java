@@ -12,12 +12,11 @@ public class UsuarioWeb
 {
     @Id
     private String id;
-    private Long idPersona;
     private String contraseña;
     private String estado;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_persona")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Persona personas;
+    private Persona persona;
 }

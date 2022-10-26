@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/persona")
 @CrossOrigin
 public class ControllerPerson{
 
@@ -23,8 +23,8 @@ public class ControllerPerson{
     }
 
     @PostMapping("/save")
-    public Persona savePerson (@RequestBody Persona person){
-        return service.savePerson(person);
+    public Persona savePerson (@RequestBody Persona persona){
+        return service.savePerson(persona);
     }
 
     @GetMapping("/{id}")

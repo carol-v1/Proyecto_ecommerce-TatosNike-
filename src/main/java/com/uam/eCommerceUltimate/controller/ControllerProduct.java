@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/producto")
 @CrossOrigin
 public class ControllerProduct
 {

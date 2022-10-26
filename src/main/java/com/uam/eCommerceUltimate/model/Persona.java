@@ -17,7 +17,6 @@ public class Persona
             allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "persona_seq")
-
     private Long id;
     private String nombre;
     private String apellido;
