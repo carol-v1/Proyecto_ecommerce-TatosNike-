@@ -16,5 +16,5 @@ public interface IServiceProducto
 
     Producto saveProduct(String productDto, MultipartFile image) throws IOException;
 
-    public void deleteProduct(Long id);
+    public void deleteProduct(Long id) throws IOException;
 }

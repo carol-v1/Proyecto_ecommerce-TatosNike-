@@ -37,8 +37,7 @@ public class ControllerProducto
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteProduct(@PathVariable Long id)
-    {
+    public void deleteProduct(@PathVariable Long id) throws IOException {
         service.deleteProduct(id);
     }
 }

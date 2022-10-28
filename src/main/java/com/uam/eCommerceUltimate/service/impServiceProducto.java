@@ -60,8 +60,9 @@ public class impServiceProducto implements IServiceProducto
     }
 
     @Override
-    public void deleteProduct(Long id)
-    {
+    public void deleteProduct(Long id) throws IOException {
+        Producto producto = repo.findById(id).get();
+        Files.deleteIfExists(Paths.get(ruta + "//" + producto.getImagen()));
         repo.deleteById(id);
     }
 }
