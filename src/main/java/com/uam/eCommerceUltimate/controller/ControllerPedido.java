@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/pedido")
@@ -22,17 +23,17 @@ public class ControllerPedido {
     }
 
     @PostMapping("/save")
-    public Pedido saveOrder(@RequestBody Pedido pedido){
+    public Pedido savePedido(@RequestBody Pedido pedido){
         return service.savePedido(pedido);
     }
 
     @GetMapping({"/{id}"})
-    public Pedido getPedido(@PathVariable Long id){
+    public Pedido getPedido(@PathVariable UUID id){
         return service.findById(id);
     }
 
     @DeleteMapping({"/delete/{id}"})
-    public void deletePedido(@PathVariable Long id){
-        service.deleteProduct(id);
+    public void deletePedido(@PathVariable UUID id){
+        service.deletePedido(id);
     }
 }

@@ -16,13 +16,14 @@ public class Detalle
     @GeneratedValue
     private UUID id;
     private Long idProducto;
-    private Date diaOrden;
+    private Long cantidad;
     private Date diaEntrega;
     private Date fechaPago;
-    private double total;
+    private double precio;
+    private double subtotal;
 
-    @ManyToOne
-    @JoinColumn(name = "id_pedido")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_pedido", nullable = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Pedido pedido;
 

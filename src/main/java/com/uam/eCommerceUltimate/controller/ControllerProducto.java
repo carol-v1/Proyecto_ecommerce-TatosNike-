@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/producto")
@@ -19,10 +20,13 @@ public class ControllerProducto
     @Autowired
     private IServiceProducto service;
 
+    @GetMapping("/listAll")
+    public List<Producto> getAll(){return service.getListProduct();}
+
     @GetMapping("/list")
-    public List<Producto> getAll()
+    public List<Producto> getProductoDisplay()
     {
-        return service.getListProduct();
+        return service.getProductDisplay();
     }
 
     @PostMapping("/save")
@@ -31,13 +35,18 @@ public class ControllerProducto
     }
 
     @GetMapping("/{id}")
-    public Producto getProduct(@PathVariable Long id)
+    public Producto getProduct(@PathVariable UUID id)
     {
         return service.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteProduct(@PathVariable Long id) throws IOException {
+    public void deleteProduct(@PathVariable UUID id) throws IOException {
         service.deleteProduct(id);
+    }
+
+    @PostMapping("/saveJson")
+    public void  saveProductoJson(@RequestBody Producto producto) {
+        service.saveProductoJson(producto);
     }
 }

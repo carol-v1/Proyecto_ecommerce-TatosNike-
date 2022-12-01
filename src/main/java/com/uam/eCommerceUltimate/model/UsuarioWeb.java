@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -13,10 +14,13 @@ public class UsuarioWeb
     @Id
     private String id;
     private String contraseña;
-    private String estado;
+    private String nombres;
+    private String apellidos;
+    private String email;
+    private String telefono;
+    @Enumerated(EnumType.STRING)
+    private EstadoUsuario estado;
 
-    @ManyToOne
-    @JoinColumn(name = "id_persona")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Persona persona;
+    @OneToMany( mappedBy = "usuarioWeb", cascade = CascadeType.ALL)
+    private List<Direccion> direccions;
 }

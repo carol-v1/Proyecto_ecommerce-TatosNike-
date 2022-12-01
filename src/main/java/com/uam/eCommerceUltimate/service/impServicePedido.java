@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Component("servicePedido")
@@ -26,7 +27,7 @@ public class impServicePedido implements IServicePedido{
     }
 
     @Override
-    public Pedido findById(Long id) {
+    public Pedido findById(UUID id) {
         return repo.findById(id).get();
     }
 
@@ -34,7 +35,10 @@ public class impServicePedido implements IServicePedido{
     @Override
     public Pedido savePedido(Pedido pedido) {
         Pedido o = new Pedido();
+        o.setPago(pedido.getPago());
+        o.setFecha(pedido.getFecha());
         o.setEstado(pedido.getEstado());
+        o.setTotal(pedido.getTotal());
         List<Detalle> detalles = pedido.getDetalles();
         pedido.setDetalles(null);
         for (Detalle det : detalles){
@@ -44,7 +48,7 @@ public class impServicePedido implements IServicePedido{
         return repo.save(o);
     }
     @Override
-    public void deleteProduct(Long id) {
+    public void deletePedido(UUID id) {
         repo.deleteById(id);
     }
 }

@@ -3,7 +3,6 @@ package com.uam.eCommerceUltimate.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -11,17 +10,14 @@ import java.util.UUID;
 @Table(name="Producto")
 public class Producto
 {
+    private Boolean display;
     @Id
-    @SequenceGenerator(name = "producto_seq",
-            sequenceName = "producto_seq",
-            allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator = "producto_seq")
-    private Long id;
+    @GeneratedValue()
+    private UUID id;
     private String nombre;
     private String modelo;
+    @Enumerated(EnumType.STRING)
+    private Categoria categoria;
     private String imagen;
-
-    @OneToMany (mappedBy = "producto", cascade = CascadeType.ALL)
-    private List<Categoria> categorias;
+    private Long cantidad;
 }
