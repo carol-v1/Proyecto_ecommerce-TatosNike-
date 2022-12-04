@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/pedido")
-@CrossOrigin
+@CrossOrigin("*")
 public class ControllerPedido {
     @Qualifier("servicePedido")
     @Autowired

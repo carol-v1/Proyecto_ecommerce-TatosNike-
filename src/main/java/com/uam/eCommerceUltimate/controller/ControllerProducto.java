@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/producto")
-@CrossOrigin
+@CrossOrigin("*")
 public class ControllerProducto
 {
     @Qualifier("serviceProduct")
