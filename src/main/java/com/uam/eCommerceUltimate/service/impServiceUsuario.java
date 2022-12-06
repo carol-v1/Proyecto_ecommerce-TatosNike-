@@ -5,6 +5,7 @@ import com.uam.eCommerceUltimate.model.UsuarioWeb;
 import com.uam.eCommerceUltimate.repository.IDireccionRepository;
 import com.uam.eCommerceUltimate.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -33,11 +34,13 @@ public class impServiceUsuario implements IServiceUsuario{
     @Override
     public UsuarioWeb saveUsuario(UsuarioWeb usuarioWeb) {
         UsuarioWeb o = new UsuarioWeb();
+        o.setId(usuarioWeb.getId());
         o.setEmail(usuarioWeb.getEmail());
         o.setContraseña(usuarioWeb.getContraseña());
         o.setNombres(usuarioWeb.getNombres());
         o.setApellidos(usuarioWeb.getApellidos());
         o.setTelefono(usuarioWeb.getTelefono());
+        o.setContraseña(new BCryptPasswordEncoder().encode(usuarioWeb.getContraseña()));
         List<Direccion> direccions = usuarioWeb.getDireccions();
         usuarioWeb.setDireccions(null);
         for (Direccion det : direccions){

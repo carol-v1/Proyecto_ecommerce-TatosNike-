@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin
+@CrossOrigin("*")
 public class ControllerUsuario {
 
     @Qualifier("serviceUsuario")
